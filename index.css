@@ -1,24 +1,57 @@
-/* Estilos generales simples */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Encabezado */
+/* Encabezado y Navegación */
 header {
     background-color: #ffffff;
-    padding: 15px 20px;
+    padding: 15px 5%;
     border-bottom: 2px solid #ddd;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-header h2 {
-    margin: 0;
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
     color: #2e7d32;
 }
 
@@ -26,23 +59,31 @@ header h2 {
 .banner {
     background-color: #e8f5e9;
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
     border-bottom: 1px solid #ccc;
 }
 
 .banner h1 {
     margin-top: 0;
     color: #1b5e20;
+    font-size: 2.2rem;
 }
 
-/* Botones sencillos */
+.banner p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Botones */
 .btn {
     display: inline-block;
     background-color: #333;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .btn-verde {
@@ -51,89 +92,162 @@ header h2 {
 
 .btn:hover {
     opacity: 0.9;
+    background-color: #1b5e20;
 }
 
-/* Contenedor de contenido */
-.contenido {
-    max-width: 800px;
-    margin: 20px auto;
+/* Contenedor de contenido principal */
+.contenido, #galeria {
+    max-width: 900px;
+    margin: 30px auto;
     padding: 0 20px;
 }
 
-.contenido h2 {
+h2 {
     color: #2e7d32;
     border-bottom: 2px solid #2e7d32;
     padding-bottom: 5px;
     margin-top: 30px;
 }
 
-/* Lista básica */
+/* Lista de Servicios e Imágenes internas */
 .lista-servicios {
-    line-height: 1.8;
-    font-size: 16px;
+    line-height: 2;
+    font-size: 17px;
+    padding-left: 20px;
 }
 
-/* Galería de fotos sencilla */
-.galeria {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 15px;
+.imagenes-servicio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 15px 0 25px 0;
 }
 
-.galeria img {
-    width: 31%;
-    min-width: 200px;
-    border-radius: 4px;
-}
-
-/* Caja de reserva */
-.caja-reserva {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    margin-top: 30px;
-    border-radius: 5px;
-}
-
-/* Pie de página */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #222;
-    color: #fff;
-    margin-top: 40px;
-    font-size: 14px;
+.imagenes-servicio img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* Sección Historia */
 .historia {
-    max-width: 800px;
-    margin: 30px auto 10px auto;
+    max-width: 900px;
+    margin: 30px auto;
     padding: 25px 20px;
     background-color: #ffffff;
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid #ddd;
 }
 
 .historia h2 {
-    color: #2e7d32;
-    border-bottom: 2px solid #2e7d32;
-    padding-bottom: 5px;
     margin-top: 0;
     margin-bottom: 15px;
 }
 
 .historia p {
-    line-height: 1.6;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     color: #444;
 }
 
-/* Adaptación para pantallas pequeñas */
-@media (max-width: 600px) {
-    .galeria img {
-        width: 100%;
+/* Galería de fotos principal */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Caja de reserva */
+.caja-reserva {
+    max-width: 900px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 30px 20px;
+    text-align: center;
+    margin: 40px auto;
+    border-radius: 6px;
+}
+
+.caja-reserva h3 {
+    margin-top: 0;
+    color: #1b5e20;
+}
+
+/* Pie de página */
+footer {
+    background-color: #222;
+    color: #fff;
+    margin-top: 50px;
+    padding: 30px 20px 20px 20px;
+    font-size: 14px;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.footer-contacto h4 {
+    color: #81c784; /* Un verde más claro para resaltar en fondo oscuro */
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.footer-contacto p {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+.footer-contacto a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer-contacto a:hover {
+    color: #81c784;
+}
+
+.footer-info {
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    margin-top: 10px;
+    color: #aaa;
+}
+
+/* Adaptación responsiva para móviles */
+@media (max-width: 680px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nav-menu {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .banner h1 {
+        font-size: 1.75rem;
+    }
+
+    .galeria, .imagenes-servicio {
+        grid-template-columns: 1fr;
     }
 }
